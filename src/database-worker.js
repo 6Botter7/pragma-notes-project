@@ -4,8 +4,6 @@
  */
 
 
-// importScripts("/database.js");
-
 
 import Database from './database.js';
 

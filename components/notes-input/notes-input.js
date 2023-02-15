@@ -1,6 +1,9 @@
 import Index from '../../src/index.js';
-import Database from '../../src/database.js';
 
+/**
+ * @class NotesInput - The `NotesInput` class is a custom element that allows the user to add, update, and delete data from the `name` index
+ *
+ * */
 export default class NotesInput extends HTMLElement {
     get html() { return import.meta.url.replace('.js', '.html'); }
 
@@ -15,11 +18,15 @@ export default class NotesInput extends HTMLElement {
         await this.load();
     }
 
+    /**
+     * @method load - The load function is called when the component is loaded. It then calls the Index class, which is the main class of
+     * the application. The Index class is then used to add, update and delete data from the database
+     */
     async load() {
         requestAnimationFrame(async () => {
-            // this.openDatabase();
+
             const index = new Index();
-            // await index.openDatabase();
+
             this.shadowRoot.getElementById('add-button').addEventListener('click', (event) => {
                 event.preventDefault();
                 const form = this.shadowRoot.getElementById('add-form');

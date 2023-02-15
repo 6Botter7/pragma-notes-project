@@ -17,6 +17,10 @@ export default class Database {
         this.stores = stores;
     }
 
+    /**
+     * @method open - It opens the database, and if the database doesn't exist, it creates it
+     * @returns A promise that resolves to the database object.
+     */
     async open() {
         return new Promise((resolve, reject) => {
             const request = window.indexedDB.open(this.name, this.version);
